@@ -21,3 +21,89 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Build tool #
+##############
+target
+.idea
+*.iml
+*.im
+*.ipr
+*.iws
+.settings
+.project
+.classpath
+
+# OS generated files #
+######################
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+activemq-data
+*.epoch
+*.log
+
+# Typically *NIX text editors, by default, append '~' to files on saving to make backups
+*~
+
+# Some editors, such as DIA, use this extension for automatic saves
+*.autosave
+
+# Our build scripts - necessary for our release jobs
+hibernate-noorm-release-scripts
+
+#Checkstyle
+.checkstyle
+
+# Build output directories
+target
+bin
+
+# IntelliJ specific files/directories
+/out
+.idea
+*.ipr
+*.iws
+*.iml
+atlassian-ide-plugin.xml
+
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.externalToolBuilders
+.factorypath
+
+# NetBeans specific files/directories
+.nbattrs
+
+# Sublime
+*.sublime-*
+
+# Miscellaneous
+*.log
+*.sh
+.clover
+.DS_Store
+
+# Maven wrapper files
+.mvn
+mvnw*
+
+compiler.xml
