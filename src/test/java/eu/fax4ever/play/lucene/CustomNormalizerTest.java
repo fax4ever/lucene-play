@@ -29,7 +29,7 @@ public class CustomNormalizerTest {
 		Analyzer lowerCaseNormalizer = CustomNormalizerFactory.createLowerCaseNormalizer();
 
 		String normalized = lowerCaseNormalizer.normalize( "anyName", "BlaBlaBla" ).utf8ToString();
-		Assert.assertEquals( "BlaBlaBla", normalized );
+		Assert.assertEquals( "blablabla", normalized );
 	}
 
 	@Test
@@ -37,6 +37,6 @@ public class CustomNormalizerTest {
 		Analyzer lowerCaseNormalizer = CustomNormalizerFactory.createLowerCaseNormalizerAlt();
 
 		String normalized = lowerCaseNormalizer.normalize( "anyName", "BlaBlaBla" ).utf8ToString();
-		Assert.assertEquals( "BlaBlaBla", normalized );
+		Assert.assertEquals( "blablabla", normalized );
 	}
 }
