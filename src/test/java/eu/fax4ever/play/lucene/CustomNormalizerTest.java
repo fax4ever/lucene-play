@@ -1,6 +1,8 @@
 package eu.fax4ever.play.lucene;
 
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,6 +27,14 @@ public class CustomNormalizerTest {
 	}
 
 	@Test
+	public void customNormalizerCustomAnalyzer_customNormalize() throws Exception {
+		Analyzer lowerCaseNormalizer = CustomNormalizerFactory.createLowerCaseNormalizerCustomAnalyzer();
+
+		String normalized = CustomNormalizerFactory.normalize( lowerCaseNormalizer, "anyName", "BlaBlaBla" );
+		Assert.assertEquals( "blablabla", normalized );
+	}
+
+	@Test
 	public void customNormalizer_normalize() {
 		Analyzer lowerCaseNormalizer = CustomNormalizerFactory.createLowerCaseNormalizer();
 
@@ -38,5 +48,13 @@ public class CustomNormalizerTest {
 
 		String normalized = lowerCaseNormalizer.normalize( "anyName", "BlaBlaBla" ).utf8ToString();
 		Assert.assertEquals( "BlaBlaBla", normalized );
+	}
+
+	@Test
+	public void customNormalizerCustomAnalyzer_normalize() throws IOException {
+		Analyzer lowerCaseNormalizer = CustomNormalizerFactory.createLowerCaseNormalizerCustomAnalyzer();
+
+		String normalized = lowerCaseNormalizer.normalize( "anyName", "BlaBlaBla" ).utf8ToString();
+		Assert.assertEquals( "blablabla", normalized );
 	}
 }
