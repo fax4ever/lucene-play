@@ -26,4 +26,12 @@ public class CustomNormalizer extends Analyzer {
 		return new TokenStreamComponents( tk, ts );
 	}
 
+	@Override
+	protected TokenStream normalize(String fieldName, TokenStream in) {
+		TokenStream result = in;
+		for ( TokenFilterFactory filter : Collections.singletonList( filterFactory ) ) {
+			result = filter.normalize( result );
+		}
+		return result;
+	}
 }
